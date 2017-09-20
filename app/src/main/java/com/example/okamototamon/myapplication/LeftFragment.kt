@@ -46,7 +46,7 @@ class LeftFragment : Fragment(), RecyclerViewAdapter.Listener {
     }
 
     override fun onRecyclerClicked(v: View, position: Int) {
-        val textView = v.findViewById<View>(R.id.text) as TextView
-        Toast.makeText(context, textView.text.toString(), Toast.LENGTH_SHORT).show()
+//        val textView = v.findViewById<View>(R.id.text) as TextView
+//        Toast.makeText(context, textView.text.toString(), Toast.LENGTH_SHORT).show()
     }
 }
