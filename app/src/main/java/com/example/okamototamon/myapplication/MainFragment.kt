@@ -46,7 +46,6 @@ class MainFragment : Fragment(), RecyclerViewAdapter.Listener {
         recyclerView.adapter = adapter
 
         return view
-
     }
 
     override fun onRecyclerClicked(v: View, position: Int) {
