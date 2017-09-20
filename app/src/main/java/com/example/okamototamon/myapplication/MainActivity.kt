@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 
+
 class MainActivity : AppCompatActivity(), ViewPager.OnPageChangeListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +36,9 @@ class MainActivity : AppCompatActivity(), ViewPager.OnPageChangeListener {
         viewPager.adapter = adapter
         viewPager.addOnPageChangeListener(this)
         tabLayout.setupWithViewPager(viewPager)
+
+//        val viewPager : ViewPager = view.findViewById(R.id.pager);
+        viewPager.adapter = ViewPagerAdapter(supportFragmentManager)
     }
 
     override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
@@ -48,25 +52,4 @@ class MainActivity : AppCompatActivity(), ViewPager.OnPageChangeListener {
     override fun onPageScrollStateChanged(state: Int) {
 
     }
-
-//    class TestFragment : Fragment() {
-//
-//        override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-//            val page = arguments.getInt("page", 0)
-//            val view = inflater!!.inflate(R.layout.fragment_main, container, false)
-//            (view.findViewById<View>(R.id.page_text) as TextView).text = "Page " + page
-//            return view
-//        }
-//
-//        companion object {
-//
-//            fun newInstance(page: Int): TestFragment {
-//                val args = Bundle()
-//                args.putInt("page", page)
-//                val fragment = TestFragment()
-//                fragment.arguments = args
-//                return fragment
-//            }
-//        }
-//    }
 }

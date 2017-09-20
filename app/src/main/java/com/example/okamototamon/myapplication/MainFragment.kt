@@ -10,9 +10,11 @@ import android.widget.Toast
 
 import java.util.ArrayList
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
 import android.view.ViewGroup
 
+import android.support.v4.app.FragmentActivity;
 /**
  * Created by okamototamon on 2017/09/19.
  */
@@ -44,6 +46,7 @@ class MainFragment : Fragment(), RecyclerViewAdapter.Listener {
         recyclerView.adapter = adapter
 
         return view
+
     }
 
     override fun onRecyclerClicked(v: View, position: Int) {
