@@ -38,15 +38,14 @@ class MainFragment : Fragment(), RecyclerViewAdapter.Listener {
         recyclerView.layoutManager = LinearLayoutManager(context)
 
         val data = ArrayList<String>()
-        data.add("text1")
-        data.add("text2")
-        data.add("text3")
-        data.add("text4")
+        data.add("text5")
+        data.add("text6")
+        data.add("text7")
+        data.add("text8")
         val adapter = RecyclerViewAdapter(context, data, this)
         recyclerView.adapter = adapter
 
         return view
-
 
     }
 
