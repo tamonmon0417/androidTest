@@ -1,20 +1,15 @@
 package com.example.okamototamon.myapplication
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
-import android.widget.TextView
-import android.widget.Toast
 
 import java.util.ArrayList
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
 import android.view.ViewGroup
 
-import android.support.v4.app.FragmentActivity;
 /**
  * Created by okamototamon on 2017/09/19.
  */
@@ -34,7 +29,7 @@ class MainFragment : Fragment(), RecyclerViewAdapter.Listener {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_main, container, false)
 
-        val recyclerView :RecyclerView = view.findViewById(R.id.recycler_view)
+        val recyclerView: RecyclerView = view.findViewById(R.id.recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(context)
 
         val data = ArrayList<String>()
@@ -42,7 +37,17 @@ class MainFragment : Fragment(), RecyclerViewAdapter.Listener {
         data.add("text6")
         data.add("text7")
         data.add("text8")
-        val adapter = RecyclerViewAdapter(context, data, this)
+
+        val items = listOf(
+                RentalItem(
+                        image = "https://itemimg-crc.adss-sys.com/itemimg/CC010/A1CC000034PK/01_001-432.jpg",
+                        countDown = 10,
+                        name = "ボダ-カットソー",
+                        brand = "earth music & ecology"
+                )
+        )
+//
+        val adapter = RecyclerViewAdapter(context, items, this)
         recyclerView.adapter = adapter
 
         return view

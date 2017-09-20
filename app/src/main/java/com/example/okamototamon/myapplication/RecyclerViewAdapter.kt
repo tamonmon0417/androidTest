@@ -7,13 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 
-import java.util.ArrayList
-
 /**
  * Created by okamototamon on 2017/09/19.
  */
 
-class RecyclerViewAdapter(context: Context, private val mData: ArrayList<String>?, private val mListener: Listener) : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
+class RecyclerViewAdapter(context: Context, private val mData: List<RentalItem>, private val mListener: Listener) : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
     private val mInflater: LayoutInflater
 
     // アイテムタップ用interface
