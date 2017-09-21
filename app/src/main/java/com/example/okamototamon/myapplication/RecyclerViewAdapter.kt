@@ -11,38 +11,60 @@ import android.widget.TextView
  * Created by okamototamon on 2017/09/19.
  */
 
-class RecyclerViewAdapter(context: Context, private val mData: List<RentalItem>, private val mListener: Listener) : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
-    private val mInflater: LayoutInflater
+class RecyclerViewAdapter(
+        context: Context,
+        private val itemList: List<RentalItem>,
+        private val onItemClick: (rental :RentalItem) -> Unit,
+        private val onBannerClick: () -> Unit
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    // アイテムタップ用interface
-    interface Listener {
-        fun onRecyclerClicked(v: View, position: Int)
-    }
+    private val mInflater: LayoutInflater = LayoutInflater.from(context)
 
-    init {
-        mInflater = LayoutInflater.from(context)
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(mInflater.inflate(R.layout.list_item, parent, false))
-    }
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.textView.text = mData!![position]
-
-        holder.itemView.setOnClickListener { view -> mListener.onRecyclerClicked(view, position) }
-    }
-
-    override fun getItemCount(): Int {
-        return mData?.size ?: 0
-    }
-
-    // ViewHolder
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        internal var textView: TextView
-
-        init {
-            textView = itemView.findViewById<View>(R.id.text) as TextView
+    //viewをそれぞれ返す
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        return if (viewType == 0){
+            BannerViewHolder(mInflater.inflate(R.layout.banner, parent, false))
+        } else {
+            ItemViewHolder(mInflater.inflate(R.layout.list_item, parent, false))
         }
     }
+
+    //ViewにデータをBindする
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+         when (holder){
+            is BannerViewHolder -> {
+                holder.itemView.setOnClickListener {onBannerClick()}
+            }
+            is ItemViewHolder -> {
+                val item = itemList[position]
+                holder.itemView.setOnClickListener {onItemClick(item)}
+                holder.setRentalItem(item)
+            }
+        }
+    }
+
+    //itemの数の取得
+    override fun getItemCount(): Int {
+        return itemList.size + 1
+    }
+
+    //item数に応じたViewTypeを返す
+    override fun getItemViewType(position: Int): Int {
+//        val item = itemList[position]
+        return when (position){
+            itemList.size -> {
+                bannerViewType
+            }
+            else -> {
+                itemViewType
+            }
+        }
+    }
+
+    //static
+    companion object {
+        val bannerViewType = 0
+        val itemViewType = 1
+    }
+
 }

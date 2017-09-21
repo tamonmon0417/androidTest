@@ -13,7 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import java.util.ArrayList
 
-class LeftFragment : Fragment(), RecyclerViewAdapter.Listener {
+class LeftFragment : Fragment(){
 
     companion object {
         fun newInstance(page: Int): MainFragment {
@@ -31,12 +31,6 @@ class LeftFragment : Fragment(), RecyclerViewAdapter.Listener {
         val recyclerView: RecyclerView = view.findViewById(R.id.recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        val data = ArrayList<String>()
-        data.add("text5")
-        data.add("text6")
-        data.add("text7")
-        data.add("text8")
-
         val items = listOf(
                 RentalItem(
                         image = "https://itemimg-crc.adss-sys.com/itemimg/CC010/A1CC000034PK/01_001-432.jpg",
@@ -45,15 +39,18 @@ class LeftFragment : Fragment(), RecyclerViewAdapter.Listener {
                         brand = "earth music & ecology"
                 )
         )
-//
-        val adapter = RecyclerViewAdapter(context, items, this)
+
+        val adapter = RecyclerViewAdapter(
+                context = context,
+                itemList = items,
+                onItemClick = {
+
+                },
+                onBannerClick = {
+
+                })
         recyclerView.adapter = adapter
 
         return view
-    }
-
-    override fun onRecyclerClicked(v: View, position: Int) {
-//        val textView = v.findViewById<View>(R.id.text) as TextView
-//        Toast.makeText(context, textView.text.toString(), Toast.LENGTH_SHORT).show()
     }
 }
