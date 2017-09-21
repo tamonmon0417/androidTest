@@ -8,7 +8,9 @@
         android:layout_height="60dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginRight="20dp" />
+        android:layout_marginRight="20dp"
+        android:src="@drawable/thumbnail"
+        />
 
 
 </LinearLayout>

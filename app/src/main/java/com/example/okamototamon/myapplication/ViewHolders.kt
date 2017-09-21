@@ -23,6 +23,8 @@ class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     //set
     fun setRentalItem(rentalItem: RentalItem){
         name.text = rentalItem.name
+        brand.text = rentalItem.brand
+        date.text = rentalItem.countDown.toString()
 
     }
 }
