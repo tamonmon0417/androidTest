@@ -11,7 +11,7 @@ import android.widget.TextView
  * Created by okamototamon on 2017/09/19.
  */
 
-class RecyclerViewAdapter(
+class RecyclerViewMainAdapter(
         context: Context,
         private val itemList: List<RentalItem>,
         private val onItemClick: (rental :RentalItem) -> Unit,
@@ -54,7 +54,6 @@ class RecyclerViewAdapter(
 
     //item数に応じたViewTypeを返す
     override fun getItemViewType(position: Int): Int {
-//        val item = itemList[position]
         return when (position){
             itemList.size -> {
                 bannerViewType
@@ -65,7 +64,7 @@ class RecyclerViewAdapter(
         }
     }
 
-    //static
+    //staticな変数
     companion object {
         val bannerViewType = 0
         val itemViewType = 1

@@ -8,7 +8,6 @@ import android.view.View
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.bumptech.glide.Glide
 
 /**
  * Created by okamototamon on 2017/09/19.
@@ -62,7 +61,7 @@ class MainFragment : Fragment() {
                 )
         )
 
-        val adapter = RecyclerViewAdapter(
+        val adapter = RecyclerViewMainAdapter(
                 context = context,
                 itemList = items,
                 onItemClick = {
