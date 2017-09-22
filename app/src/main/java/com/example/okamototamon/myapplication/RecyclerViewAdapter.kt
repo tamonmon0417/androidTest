@@ -21,7 +21,9 @@ class RecyclerViewAdapter(
     private val mInflater: LayoutInflater = LayoutInflater.from(context)
 
     //viewをそれぞれ返す
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(
+            parent: ViewGroup,
+            viewType: Int): RecyclerView.ViewHolder {
         return if (viewType == 0){
             BannerViewHolder(mInflater.inflate(R.layout.banner, parent, false))
         } else {
@@ -30,7 +32,9 @@ class RecyclerViewAdapter(
     }
 
     //ViewにデータをBindする
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(
+            holder: RecyclerView.ViewHolder,
+            position: Int) {
          when (holder){
             is BannerViewHolder -> {
                 holder.itemView.setOnClickListener {onBannerClick()}

@@ -26,21 +26,38 @@ class MainFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_main, container, false)
 
         val recyclerView: RecyclerView = view.findViewById(R.id.recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(context)
-
-        Glide.with(this).load("http://goo.gl/h8qOq7")
-                .fitCenter()
-
 
         val items = listOf(
                 RentalItem(
                         image ="https://itemimg-crc.adss-sys.com/itemimg/CC010/A1CC000034PK/01_001-432.jpg",
                         countDown = 10,
                         name = "ボダ-カットソー",
+                        brand = "earth music & ecology"
+                ),
+                RentalItem(
+                        image ="https://itemimg-crc.adss-sys.com/itemimg/CC010/A1CC000034PK/01_001-432.jpg",
+                        countDown = 10,
+                        name = "ボ-カットソー",
+                        brand = "earth music & ecology"
+                ),
+                RentalItem(
+                        image ="https://itemimg-crc.adss-sys.com/itemimg/CC010/A1CC000034PK/01_001-432.jpg",
+                        countDown = 10,
+                        name = "ボ-カットソー",
+                        brand = "earth music & ecology"
+                ),
+                RentalItem(
+                        image ="https://itemimg-crc.adss-sys.com/itemimg/CC010/A1CC000034PK/01_001-432.jpg",
+                        countDown = 10,
+                        name = "ボ-カットソー",
                         brand = "earth music & ecology"
                 )
         )
