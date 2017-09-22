@@ -11,7 +11,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import java.util.ArrayList
+import com.bumptech.glide.Glide
 
 class RightFragment : Fragment(){
 
@@ -33,7 +33,7 @@ class RightFragment : Fragment(){
 
         val items = listOf(
                 RentalItem(
-                        image = "https://itemimg-crc.adss-sys.com/itemimg/CC010/A1CC000034PK/01_001-432.jpg",
+                        image ="https://itemimg-crc.adss-sys.com/itemimg/CC010/A1CC000034PK/01_001-432.jpg",
                         countDown = 10,
                         name = "ボダ-カットソー",
                         brand = "earth music & ecology"

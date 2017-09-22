@@ -26,9 +26,9 @@ class ViewPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
     // タブタイトル
     override fun getPageTitle(position: Int): CharSequence {
         when (position) {
-            0 -> return "Left View"
-            1 -> return "Center View"
-            2 -> return "Right View"
+            0 -> return "出荷待ち"
+            1 -> return "レンタル中"
+            2 -> return "返却中"
         }
         return ""
     }

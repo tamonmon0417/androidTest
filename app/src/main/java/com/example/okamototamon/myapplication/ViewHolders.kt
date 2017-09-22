@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 
 /**
  * Created by okamototamon on 2017/09/21.
@@ -22,10 +23,10 @@ class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     //set
     fun setRentalItem(rentalItem: RentalItem){
+        Glide.with(itemView.context).load(rentalItem.image).fitCenter().into(img)
         name.text = rentalItem.name
         brand.text = rentalItem.brand
         date.text = rentalItem.countDown.toString()
-
     }
 }
 

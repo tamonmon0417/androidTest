@@ -5,11 +5,10 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 
-import java.util.ArrayList
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
+import com.bumptech.glide.Glide
 
 /**
  * Created by okamototamon on 2017/09/19.
@@ -33,9 +32,13 @@ class MainFragment : Fragment() {
         val recyclerView: RecyclerView = view.findViewById(R.id.recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(context)
 
+        Glide.with(this).load("http://goo.gl/h8qOq7")
+                .fitCenter()
+
+
         val items = listOf(
                 RentalItem(
-                        image = "https://itemimg-crc.adss-sys.com/itemimg/CC010/A1CC000034PK/01_001-432.jpg",
+                        image ="https://itemimg-crc.adss-sys.com/itemimg/CC010/A1CC000034PK/01_001-432.jpg",
                         countDown = 10,
                         name = "ボダ-カットソー",
                         brand = "earth music & ecology"
