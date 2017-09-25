@@ -37,7 +37,7 @@ class RecyclerViewMainAdapter(
             position: Int) {
          when (holder){
             is BannerViewHolder -> {
-                holder.itemView.setOnClickListener {onBannerClick()}
+                holder.button.setOnClickListener {onBannerClick()}
             }
             is ItemViewHolder -> {
                 val item = itemList[position]

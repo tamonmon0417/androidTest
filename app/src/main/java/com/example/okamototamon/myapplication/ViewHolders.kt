@@ -1,5 +1,6 @@
 package com.example.okamototamon.myapplication
 
+import android.support.design.widget.FloatingActionButton
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
@@ -12,6 +13,7 @@ import com.bumptech.glide.Glide
 // ViewHolder
 class BannerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     internal var banner: ImageView = itemView.findViewById<View>(R.id.banner) as ImageView
+    internal var button: FloatingActionButton = itemView.findViewById<View>(R.id.banner_button) as FloatingActionButton
 
 }
 
