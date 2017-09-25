@@ -14,38 +14,29 @@ class RecyclerViewLeftAdapter(
         context: Context,
         private val itemList: List<RentalItem>,
         private val onItemClick: (rental : RentalItem) -> Unit
-) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+) : RecyclerView.Adapter<ItemViewHolder>() {
 
     private val mInflater: LayoutInflater = LayoutInflater.from(context)
 
     //viewをそれぞれ返す
     override fun onCreateViewHolder(
             parent: ViewGroup,
-            viewType: Int): RecyclerView.ViewHolder {
-                return ItemViewHolder(mInflater.inflate(R.layout.list_item, parent, false))
+            viewType: Int): ItemViewHolder {
+                return ItemViewHolder(mInflater.inflate(R.layout.list_item_check, parent, false))
             }
-
 
     //ViewにデータをBindする
     override fun onBindViewHolder(
-            holder: RecyclerView.ViewHolder,
+            holder: ItemViewHolder,
             position: Int) {
                 val item = itemList[position]
                 holder.itemView.setOnClickListener {onItemClick(item)}
                 holder.setRentalItem(item)
             }
 
-
     //itemの数の取得
     override fun getItemCount(): Int {
-        return itemList.size + 1
-    }
-
-    //item数に応じたViewTypeを返す
-    override fun getItemViewType(position: Int): Int {
-        return itemViewType
-
-
+        return itemList.size
     }
 
 }
