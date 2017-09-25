@@ -42,13 +42,10 @@ class RightFragment : Fragment(){
                 )
         )
 
-        val adapter = RecyclerViewRightAdapter(
+        val adapter = RecyclerViewLeftAdapter(
                 context = context,
                 itemList = items,
                 onItemClick = {
-
-                },
-                onBannerClick = {
 
                 })
         recyclerView.adapter = adapter
