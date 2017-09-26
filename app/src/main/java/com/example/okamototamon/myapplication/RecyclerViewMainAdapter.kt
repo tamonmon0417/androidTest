@@ -48,9 +48,7 @@ class RecyclerViewMainAdapter(
     }
 
     //itemの数の取得
-    override fun getItemCount(): Int {
-        return itemList.size + 1
-    }
+    override fun getItemCount(): Int = itemList.size + 1
 
     //item数に応じたViewTypeを返す
     override fun getItemViewType(position: Int): Int {

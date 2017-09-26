@@ -7,11 +7,10 @@ import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
 
+/**
+ * Created by okamototamon on 2017/09/19.
+ */
 
 class MainActivity : AppCompatActivity(), ViewPager.OnPageChangeListener {
 
@@ -23,13 +22,9 @@ class MainActivity : AppCompatActivity(), ViewPager.OnPageChangeListener {
         val viewPager = findViewById(R.id.pager) as ViewPager
 
         val adapter = object : FragmentPagerAdapter(supportFragmentManager) {
-            override fun getItem(position: Int): Fragment {
-                return MainFragment.newInstance(position + 1)
-            }
+            override fun getItem(position: Int): Fragment = MainFragment.newInstance(position + 1)
 
-            override fun getPageTitle(position: Int): CharSequence {
-                return "tab " + (position + 1)
-            }
+            override fun getPageTitle(position: Int): CharSequence = "tab " + (position + 1)
 
             override fun getCount(): Int = 3
         }
@@ -37,7 +32,6 @@ class MainActivity : AppCompatActivity(), ViewPager.OnPageChangeListener {
         viewPager.addOnPageChangeListener(this)
         tabLayout.setupWithViewPager(viewPager)
 
-//        val viewPager : ViewPager = view.findViewById(R.id.pager);
         viewPager.adapter = ViewPagerAdapter(supportFragmentManager)
     }
 

@@ -23,6 +23,7 @@ class ViewPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
         return 3
     }
 
+
     // タブタイトル
     override fun getPageTitle(position: Int): CharSequence {
         when (position) {

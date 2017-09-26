@@ -35,8 +35,6 @@ class RecyclerViewRightAdapter(
     }
 
     //itemの数の取得
-    override fun getItemCount(): Int {
-        return itemList.size
-    }
+    override fun getItemCount(): Int = itemList.size
 
 }

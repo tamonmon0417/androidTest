@@ -14,7 +14,6 @@ import com.bumptech.glide.Glide
 class BannerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     internal var banner: ImageView = itemView.findViewById<View>(R.id.banner) as ImageView
     internal var button: FloatingActionButton = itemView.findViewById<View>(R.id.banner_button) as FloatingActionButton
-
 }
 
 class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

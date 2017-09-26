@@ -68,6 +68,7 @@ class MainFragment : Fragment() {
                 context = context,
                 itemList = items,
                 onItemClick = {
+                    Toast.makeText(context, "hello", Toast.LENGTH_SHORT).show()
 
                 },
                 onBannerClick = {
