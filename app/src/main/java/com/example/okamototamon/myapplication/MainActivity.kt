@@ -12,7 +12,7 @@ import android.util.Log
  * Created by okamototamon on 2017/09/19.
  */
 
-class MainActivity : AppCompatActivity(), ViewPager.OnPageChangeListener {
+class MainActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,28 +22,28 @@ class MainActivity : AppCompatActivity(), ViewPager.OnPageChangeListener {
         val viewPager = findViewById(R.id.pager) as ViewPager
 
         val adapter = object : FragmentPagerAdapter(supportFragmentManager) {
-            override fun getItem(position: Int): Fragment = MainFragment.newInstance(position + 1)
+            override fun getItem(position: Int): Fragment = RentalCenterFragment.newInstance(position + 1)
 
             override fun getPageTitle(position: Int): CharSequence = "tab " + (position + 1)
 
             override fun getCount(): Int = 3
         }
         viewPager.adapter = adapter
-        viewPager.addOnPageChangeListener(this)
+//        viewPager.addOnPageChangeListener(this)
         tabLayout.setupWithViewPager(viewPager)
 
-        viewPager.adapter = ViewPagerAdapter(supportFragmentManager)
+        viewPager.adapter = RentalViewPagerAdapter(supportFragmentManager)
     }
 
-    override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+//    override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+//
+//    }
 
-    }
+//    override fun onPageSelected(position: Int) {
+//        Log.d("MainActivity", "onPageSelected() position=" + position)
+//    }
 
-    override fun onPageSelected(position: Int) {
-        Log.d("MainActivity", "onPageSelected() position=" + position)
-    }
-
-    override fun onPageScrollStateChanged(state: Int) {
-
-    }
+//    override fun onPageScrollStateChanged(state: Int) {
+//
+//    }
 }

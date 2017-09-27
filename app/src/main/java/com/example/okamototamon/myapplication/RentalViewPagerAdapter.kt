@@ -8,13 +8,13 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
 
-class ViewPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
+class RentalViewPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
         when (position) {
-            0 -> return LeftFragment()
-            1 -> return MainFragment()
-            else -> return RightFragment()
+            0 -> return RentalLeftFragment()
+            1 -> return RentalCenterFragment()
+            else -> return RentalRightFragment()
         }
     }
 
@@ -28,7 +28,7 @@ class ViewPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
     override fun getPageTitle(position: Int): CharSequence {
         when (position) {
             0 -> return "出荷待ち"
-            1 -> return "レンタル中"
+            1 -> return "レンタル中(" + 4 +")"
             2 -> return "返却中"
         }
         return ""

@@ -1,13 +1,11 @@
 package com.example.okamototamon.myapplication
 
-import android.app.Activity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 
 import android.support.v4.app.Fragment;
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
@@ -16,13 +14,13 @@ import android.widget.Toast
  * Created by okamototamon on 2017/09/19.
  */
 
-class MainFragment : Fragment() {
+class RentalCenterFragment : Fragment() {
 
     companion object {
-        fun newInstance(page: Int): MainFragment {
+        fun newInstance(page: Int): RentalCenterFragment {
             val args = Bundle()
             args.putInt("page", page)
-            val fragment = MainFragment()
+            val fragment = RentalCenterFragment()
             fragment.arguments = args
             return fragment
         }
@@ -32,7 +30,7 @@ class MainFragment : Fragment() {
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_main, container, false)
+        val view = inflater.inflate(R.layout.fragment_rental_center, container, false)
 
         val recyclerView: RecyclerView = view.findViewById(R.id.recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(context)
@@ -64,7 +62,8 @@ class MainFragment : Fragment() {
                 )
         )
 
-        val adapter = RecyclerViewMainAdapter(
+
+        val adapter = RecyclerViewCenterAdapter(
                 context = context,
                 itemList = items,
                 onItemClick = {

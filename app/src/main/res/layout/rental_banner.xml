@@ -5,6 +5,16 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/banner_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="90dp"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="?android:attr/homeAsUpIndicator" />
+
     <ImageView
         android:id="@+id/banner"
         android:layout_width="wrap_content"
@@ -34,16 +44,6 @@
         android:text="プランをアップグレードすると\nレンタル枠を追加できます"
         android:textColor="#ffffff"
         android:textSize="14sp" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/banner_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="300dp"
-        android:layout_marginTop="90dp"
-        android:clickable="true"
-        app:fabSize="mini"
-        app:srcCompat="?android:attr/homeAsUpIndicator" />
 
 
 </FrameLayout>

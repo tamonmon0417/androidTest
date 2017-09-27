@@ -3,15 +3,13 @@ package com.example.okamototamon.myapplication
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 
 /**
  * Created by okamototamon on 2017/09/19.
  */
 
-class RecyclerViewMainAdapter(
+class RecyclerViewCenterAdapter(
         context: Context,
         private val itemList: List<RentalItem>,
         private val onItemClick: (rental :RentalItem) -> Unit,
@@ -25,9 +23,9 @@ class RecyclerViewMainAdapter(
             parent: ViewGroup,
             viewType: Int): RecyclerView.ViewHolder {
         return if (viewType == 0){
-            BannerViewHolder(mInflater.inflate(R.layout.banner, parent, false))
+            BannerViewHolder(mInflater.inflate(R.layout.rental_banner, parent, false))
         } else {
-            ItemViewHolder(mInflater.inflate(R.layout.list_item, parent, false))
+            ItemViewHolder(mInflater.inflate(R.layout.rental_list_item, parent, false))
         }
     }
 
@@ -37,6 +35,7 @@ class RecyclerViewMainAdapter(
             position: Int) {
          when (holder){
             is BannerViewHolder -> {
+                holder.banner.setOnClickListener {onBannerClick()}
                 holder.button.setOnClickListener {onBannerClick()}
             }
             is ItemViewHolder -> {

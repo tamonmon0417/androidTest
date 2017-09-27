@@ -4,7 +4,6 @@ import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.example.okamototamon.myapplication.RecyclerViewMainAdapter.Companion.itemViewType
 
 /**
  * Created by okamototamon on 2017/09/19.
@@ -22,7 +21,7 @@ class RecyclerViewRightAdapter(
     override fun onCreateViewHolder(
             parent: ViewGroup,
             viewType: Int): ItemViewHolder {
-        return ItemViewHolder(mInflater.inflate(R.layout.list_item_check, parent, false))
+        return ItemViewHolder(mInflater.inflate(R.layout.rental_list_item_check, parent, false))
     }
 
     //ViewにデータをBindする
